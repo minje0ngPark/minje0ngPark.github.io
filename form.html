@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>수업중 응답 설문</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 30px;
+      font-family: Arial, sans-serif;
+    }
+
+    form {
+      padding: 20px;
+      width: 300px;
+      border: 2px solid gray;
+    }
+
+    fieldset {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[list],
+    textarea,
+    select {
+      width: 100%;
+      padding: 5px;
+      margin-top: 5px;
+    }
+
+    textarea {
+      height: 60px;
+    }
+
+    .yellow {
+      background-color: #ffff66;
+    }
+
+    .blue {
+      background-color: #66ffff;
+    }
+
+    .radio-group,
+    .checkbox-group {
+      margin-top: 10px;
+    }
+
+    .submit-btn {
+      margin-top: 15px;
+    }
+
+    h3 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- 신상털기 -->
+  <form id="form-no-answer" class="yellow" onsubmit="submitNoAnswer(event)">
+    <fieldset>
+      <legend><h3>신상털기...</h3></legend>
+  
+      <label>이메일:
+        <input type="email" name="email" placeholder="@가 꼭 포함되게 해주세요" required>
+      </label>
+  
+      <label>이름:
+        <input type="text" name="name" list="nameList" placeholder="박민정" required>
+      </label>
+  
+      <label>하고싶은 말:
+        <textarea name="word" placeholder="자유롭게 작성해주세요"></textarea>
+      </label>
+  
+      <div class="checkbox-group">
+        <label>좋아하는 음식:</label>
+        <label><input type="checkbox" name="offering" value="양식"> 양식</label>
+        <label><input type="checkbox" name="offering" value="일식"> 일식</label>
+        <label><input type="checkbox" name="offering" value="중식"> 중식</label>
+        <label><input type="checkbox" name="offering" value="한식"> 한식</label>
+      </div>
+  
+      <div class="radio-group">
+        <label>인터넷 기초04를 어려워한다:</label>
+        <label><input type="radio" name="callMichael" value="네"> 네</label>
+        <label><input type="radio" name="callMichael" value="아니요"> 아니요</label>
+        <label><input type="radio" name="callMichael" value="네니요"> 네니요</label>
+      </div>
+  
+      <label>이번 학기 제일 좋아하는 과목은:
+        <select name="favoriteSubject">
+          <option value="인터넷기초">인터넷기초</option>
+          <option value="말고는">말고는</option>
+          <option value="딱히">딱히</option>
+        </select>
+      </label>
+  
+      <button type="submit" class="submit-btn">제출</button>
+    </fieldset>
+  </form>
+
+<script> //웹앱 자바스크립트
+  function submitNoAnswer(event) {
+    event.preventDefault();
+
+    const form = document.getElementById("form-no-answer");
+    const data = new FormData(form);
+
+    // checkbox 여러 개 선택된 값 수동으로 수집
+    const offerings = [];
+    form.querySelectorAll('input[name="offering"]:checked').forEach(el => offerings.push(el.value));
+    data.set("offering", offerings.join(", "));
+
+    // 실제 전송
+    fetch("https://script.google.com/macros/s/AKfycbxWb8MWWrSFrTQCNoyDOivgDgOqF-GEBwFpEb952-FTFbmWz-UWrlLZyt5T0VrJb-mW/exec", {
+      method: "POST",
+      body: new URLSearchParams(data)
+    }).then(() => {
+      alert("제출 완료!");
+      form.reset(); // 입력 초기화
+    }).catch(err => {
+      alert("제출 실패: " + err.message);
+    });
+  }
+</script>

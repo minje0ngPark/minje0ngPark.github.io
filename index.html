@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Portfolio of Minjeong Park</title>
+    
+    <!-- 외부 CSS 파일 연결 -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <!-- 페이지 메타데이터 정보 -->
+    <meta name="author" content="박민정">
+    <meta name="description" content="이 페이지는 박민정 수강생의 포트폴리오 페이지입니다.">
+  </head>
+  
+
+  <body>
+    <!-- 헤더 영역: 포트폴리오 제목 -->
+    <header>
+      <h1>박민정의 포트폴리오</h1>
+    </header>
+
+    <!-- 네비게이션 바: 각 섹션으로 이동할 수 있는 메뉴 -->
+    <nav>
+      <a href="#overview">소개</a>
+      <a href="#one">1학년 수강 강의</a>
+      <a href="#education">학력</a>
+      <a href="#career">경력</a>
+      <a href="#projects">프로젝트</a>
+    </nav>
+
+    <!-- 소개 섹션 -->
+    <section class="overview" id="overview">
+      <h2>소개</h2>
+      <!-- 프로필 이미지 -->
+      <img src="./media/profile.png" alt="프로필 이미지" class="profile-img">
+
+      <!-- 연락처 및 채널 -->
+      <div class="contact">
+        <h2>Contact & Channels</h2>
+        <!-- 이메일 -->
+        <div class="contact-item">
+          <span class="label">✉️ e-mail:</span>
+          <a href="mailto:pppp4179pppp4179@gmail.com" target="_blank">
+            pppp4179pppp4179@gmail.com
+          </a>
+        </div>
+
+        <!-- Github -->
+        <div class="contact-item">
+          <span class="label">🐙 Github:</span>
+          <a href="https://github.com/minje0ngPark" target="_blank">
+            minje0ngPark
+          </a>
+        </div>
+
+        <!-- Instagram -->
+        <div class="contact-item">
+          <span class="label">💻 instagram:</span>
+          <a href="https://www.instagram.com/verk1eiden/" target="_blank">
+            min jeong
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 수강 강의 섹션 -->
+    <section class="one" id="career">
+      <h2>💼 1학년 수강 강의</h2>
+
+      <!-- 전공탐색 강의 -->
+      <details>
+        <summary>전공탐색</summary>
+        <div>
+          <ul>
+            <li>심리학의 세계(심리학 전공탐색)</li>
+            <li>프로그래밍개론(디지털소프트웨어공학부 전공탐색)</li>
+            <li>철학으로 보는 현대 문화(철학 전공탐색)</li>
+            <li>4차 산업 혁명과 문헌 정보학의 미래(문헌정보학 전공탐색)</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- 필수/일반교양 강의 -->
+      <details>
+        <summary>필수/일반교양</summary>
+        <div>
+          <ul>
+            <li>college English</li>
+            <li>컴퓨팅 사고</li>
+            <li>미와 예술의 철학적 성찰</li>
+            <li>문학의 이해</li>
+            <li>덕성인의 기초</li>
+            <li>영상 예술과 사회 복지</li>
+            <li>심리학에 대한 대표적 오해들</li>
+            <li>글로벌 사회의 이해</li>
+            <li>스페인어 회화</li>
+            <li>이해와 소통 세미나</li>
+          </ul>
+        </div>
+      </details>  
+    </section>
+
+    <!-- 학력 섹션 -->
+    <section class="education" id="education">
+      <h2>🏫 학력</h2>
+      <ul>
+        <li>남녕고등학교 졸업</li>
+        <li>덕성여자대학교(서울) 디지털소프트웨어공학부 재학</li>
+      </ul>
+    </section>
+
+    <!-- 경력 섹션 -->
+    <section class="career" id="research">
+      <h2>📚 경력</h2>
+      <ul>
+        <li>남녕고등학교 홍보 모델</li>
+        <li>남녕고등학교 과학중점 엠베서더</li>
+      </ul>
+    </section>
+
+    <!-- 프로젝트 섹션 -->
+    <section class="projects" id="projects">
+      <h2>📁 프로젝트</h2>
+      <ol>
+        <li>
+          덕성여자대학교 맛집 소개 프로젝트<br>
+          : 내 마음대로 고른... 덕대 맛집 리스트!
+
+          <!-- 프로젝트 테이블 (이미지 + 링크) -->
+          <div class="project-table-wrapper">
+            <table class="project-table">
+              <tr>
+                <td>
+                  <!-- 배포된 프로젝트 사이트 링크 -->
+                  <a href="https://github.com/minje0ngPark/duksung_diner" target="_blank">
+                    <img src="./media/meme.jpeg" alt="프로젝트 1" />
+                  </a>
+                </td>
+                <td>
+                  <!-- 깃허브 링크 -->
+                  <a href="https://github.com/minje0ngPark/duksung_diner">
+                    깃허브 링크 바로가기
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </li>
+      </ol>
+    </section>
+  </body>
+  <!-- 페이지 하단에 항상 표시될 꼬리말 -->
+  <footer>
+    <p>페이지 제작자: 주식회사 Park | 이메일: <a href="mailto:pppp4179pppp4179@gmail.com">pppp4179pppp4179@gmail.com</a></p>
+    <p>문의는 디엠으로 부탁드립니다. 🙏</p>
+  </footer>
+</html>
